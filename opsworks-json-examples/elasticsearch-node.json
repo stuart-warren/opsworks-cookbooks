@@ -1,0 +1,58 @@
+{
+    "elasticsearch": {
+        "version": "1.1.0",
+        "cluster": {
+            "name": "elasticsearch-test"
+        },
+        "node": {
+            "master": "true"
+        },
+        "logging": {
+            "action.discovery.ec2": "TRACE"
+        },
+        "plugins": {
+            "elasticsearch/elasticsearch-cloud-aws": {
+                "version": "2.1.0"
+            },
+            "karmi/elasticsearch-paramedic": {
+                "version": "master"
+            },
+            "lmenezes/elasticsearch-kopf": {
+                "version": "0.5.5"
+            }
+        },
+        "cloud": {
+            "aws": {
+                "region": "eu-west-1"
+            }
+        },
+        "index": {
+            "number_of_shards": 3,
+            "number_of_replicas": 2
+        },
+        "discovery": {
+            "type": "ec2",
+            "zen": {
+                "minimum_master_nodes": 2,
+                "ping": {
+                    "multicast": {
+                        "enabled": false
+                    }
+                }
+            },
+            "ec2": {
+                "tag": {
+                    "opsworks:stack": "elasticsearch-test"
+                }
+            }
+        },
+        "custom_config": {
+            "cluster.routing.allocation.awareness.attributes": "rack_id",
+            "index.refresh_interval": "3s",
+            "indices.fielddata.cache.size": "15%",
+            "indices.fielddata.cache.expire": "1h",
+            "indices.cache.filter.size": "15%",
+            "indices.memory.index_buffer_size": "60%"
+        }
+    }
+}
