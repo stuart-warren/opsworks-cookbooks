@@ -1,8 +1,13 @@
+# java::default elasticsearch elasticsearch::aws elasticsearch::plugins elasticsearch::proxy
 {
     "elasticsearch": {
         "version": "1.1.0",
         "cluster": {
             "name": "elasticsearch-test"
+        },
+        "nginx": {
+            "allow_cluster_api": "true",
+            "port": 80
         },
         "node": {
             "master": "true"
@@ -14,12 +19,11 @@
             "elasticsearch/elasticsearch-cloud-aws": {
                 "version": "2.1.0"
             },
-            "karmi/elasticsearch-paramedic": {
-                "version": "master"
-            },
+            "karmi/elasticsearch-paramedic": {},
             "lmenezes/elasticsearch-kopf": {
                 "version": "0.5.5"
-            }
+            },
+            "royrusso/elasticsearch-HQ": {}
         },
         "cloud": {
             "aws": {
@@ -46,8 +50,11 @@
                 }
             }
         },
+        "limits": {
+            "nofile": 655350
+        },
         "custom_config": {
-            "cluster.routing.allocation.awareness.attributes": "rack_id",
+            "cluster.routing.allocation.awareness.attributes": "aws_availability_zone",
             "index.refresh_interval": "3s",
             "indices.fielddata.cache.size": "15%",
             "indices.fielddata.cache.expire": "1h",
