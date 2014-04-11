@@ -11,7 +11,7 @@
         },
         "node": {
             "master": "true",
-            "data": "true"
+            "data": "false"
         },
         "logging": {
             "action.discovery.ec2": "TRACE"
