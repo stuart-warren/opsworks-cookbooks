@@ -49,3 +49,6 @@
 [submodule "git"]
 	path = git
 	url = https://github.com/jssjr/git.git
+[submodule "dmg"]
+	path = dmg
+	url = https://github.com/opscode-cookbooks/dmg.git
