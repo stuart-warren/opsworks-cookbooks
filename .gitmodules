@@ -46,3 +46,6 @@
 [submodule "ant"]
 	path = ant
 	url = https://github.com/opscode-cookbooks/ant
+[submodule "git"]
+	path = git
+	url = https://github.com/jssjr/git.git
