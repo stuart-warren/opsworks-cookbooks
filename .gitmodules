@@ -43,3 +43,6 @@
 [submodule "logstash"]
 	path = logstash
 	url = https://github.com/lusis/chef-logstash
+[submodule "ant"]
+	path = ant
+	url = https://github.com/opscode-cookbooks/ant
