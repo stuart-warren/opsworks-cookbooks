@@ -42,4 +42,4 @@
 	url = https://github.com/opscode-cookbooks/yum-epel
 [submodule "logstash"]
 	path = logstash
-	url = https://github.com/foxycoder/chef-logstash
+	url = https://github.com/lusis/chef-logstash
