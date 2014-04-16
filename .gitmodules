@@ -64,3 +64,6 @@
 [submodule "pleaserun"]
 	path = pleaserun
 	url = https://github.com/paulczar/chef-pleaserun.git
+[submodule "runit"]
+	path = runit
+	url = https://github.com/hw-cookbooks/runit.git
