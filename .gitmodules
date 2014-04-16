@@ -42,7 +42,7 @@
 	url = https://github.com/opscode-cookbooks/yum-epel
 [submodule "logstash"]
 	path = logstash
-	url = https://github.com/lusis/chef-logstash
+	url = https://github.com/stuart-warren/chef-logstash.git
 [submodule "ant"]
 	path = ant
 	url = https://github.com/opscode-cookbooks/ant
