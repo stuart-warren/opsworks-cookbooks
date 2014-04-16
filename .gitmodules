@@ -61,3 +61,6 @@
 [submodule "logrotate"]
 	path = logrotate
 	url = https://github.com/stevendanna/logrotate.git
+[submodule "pleaserun"]
+	path = pleaserun
+	url = https://github.com/paulczar/chef-pleaserun.git
