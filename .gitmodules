@@ -55,3 +55,9 @@
 [submodule "chef_handler"]
 	path = chef_handler
 	url = https://github.com/opscode-cookbooks/chef_handler.git
+[submodule "kibana"]
+	path = kibana
+	url = https://github.com/lusis/chef-kibana.git
+[submodule "logrotate"]
+	path = logrotate
+	url = https://github.com/stevendanna/logrotate.git
