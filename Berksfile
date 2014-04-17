@@ -13,7 +13,7 @@ cookbook 'dmg'
 cookbook 'chef_handler'
 # cookbook 'runit'
 
-cookbook 'ohai', git: 'https://github.com/opscode-cookbooks/ohai.git', tag: 'v1.1.2'
+cookbook 'ohai', git: 'https://github.com/opscode-cookbooks/ohai.git', tag: '1.1.2'
 cookbook 'elasticsearch', git: 'https://github.com/elasticsearch/cookbook-elasticsearch'
 cookbook 'monit', git: 'https://github.com/apsoto/monit'
 cookbook 'python', git: 'https://github.com/poise/python'
