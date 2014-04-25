@@ -24,7 +24,10 @@
             "lmenezes/elasticsearch-kopf": {
                 "version": "0.5.5"
             },
-            "royrusso/elasticsearch-HQ": {}
+            "royrusso/elasticsearch-HQ": {},
+            "elasticsearch/kibana3": {
+                "version": "3.0.1"
+            }
         },
         "cloud": {
             "aws": {
@@ -38,7 +41,7 @@
         "discovery": {
             "type": "ec2",
             "zen": {
-                "minimum_master_nodes": 2,
+                "minimum_master_nodes": 1,
                 "ping": {
                     "multicast": {
                         "enabled": false
