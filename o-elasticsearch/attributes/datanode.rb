@@ -1,4 +1,4 @@
 
-default['elasticsearch']['node']['master'] = false
-default['elasticsearch']['node']['data'] = true
-default['elasticsearch']['custom_config']['indices.memory.index_buffer_size'] = '60%'
+normal['elasticsearch']['node']['master'] = false
+normal['elasticsearch']['node']['data'] = true
+normal['elasticsearch']['custom_config']['indices.memory.index_buffer_size'] = '60%'
