@@ -5,5 +5,6 @@ license     "Apache 2.0"
 version     "0.0.2"
 
 depends "elasticsearch"
+recipe "o-elasticsearch::default"
 recipe "o-elasticsearch::datanode", "Sets up a data only node"
 recipe "o-elasticsearch::httpnode", "Sets up a http only node"
