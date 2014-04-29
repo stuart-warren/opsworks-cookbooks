@@ -21,22 +21,25 @@ normal.elasticsearch['custom_config']['indices.fielddata.cache.expire'] = '1h'
 normal.elasticsearch['custom_config']['indices.cache.filter.size'] = '15%'
 
 
-# node[:opsworks][:instance][:layers]
-# httpnode
+if node[:opsworks][:instance][:layers].include? 'elasticsearch-frontend'
 
-normal.elasticsearch['version'] = '1.1.0'
-normal.elasticsearch['node']['master'] = true
-normal.elasticsearch['node']['data'] = false
-normal.elasticsearch['nginx']['allow_cluster_api'] = true
-normal.elasticsearch['nginx']['port'] = 80
-normal.elasticsearch['plugins']['karmi/elasticsearch-paramedic'] = {}
-normal.elasticsearch['plugins']['lmenezes/elasticsearch-kopf']['version'] = '0.5.5'
-normal.elasticsearch['plugins']['royrusso/elasticsearch-HQ'] = {}
-normal.elasticsearch['plugins']['karmi/elasticsearch-paramedic'] = {}
+    # httpnode
+    normal.elasticsearch['node']['master'] = true
+    normal.elasticsearch['node']['data'] = false
+    normal.elasticsearch['nginx']['allow_cluster_api'] = true
+    normal.elasticsearch['nginx']['port'] = 80
+    normal.elasticsearch['plugins']['karmi/elasticsearch-paramedic'] = {}
+    normal.elasticsearch['plugins']['lmenezes/elasticsearch-kopf']['version'] = '0.5.5'
+    normal.elasticsearch['plugins']['royrusso/elasticsearch-HQ'] = {}
+    normal.elasticsearch['plugins']['karmi/elasticsearch-paramedic'] = {}
 
-# # datanode
+end
 
-# normal.elasticsearch['version'] = '1.1.0'
-# normal.elasticsearch['node']['master'] = false
-# normal.elasticsearch['node']['data'] = true
-# normal.elasticsearch['custom_config']['indices.memory.index_buffer_size'] = '60%'
+if node[:opsworks][:instance][:layers].include? 'elasticsearch-data'
+
+    # datanode
+    normal.elasticsearch['node']['master'] = false
+    normal.elasticsearch['node']['data'] = true
+    normal.elasticsearch['custom_config']['indices.memory.index_buffer_size'] = '60%'
+
+end
