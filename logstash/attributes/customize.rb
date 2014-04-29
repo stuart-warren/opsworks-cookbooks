@@ -1,5 +1,11 @@
 
 normal.logstash['instance']['server']['enable_embedded_es'] = false
+
+normal.logstash['instance']['server']['elasticsearch_ip'] = '127.0.0.1'
+normal.logstash['instance']['server']['elasticsearch_query'] = ''
+normal.logstash['instance']['server']['graphite_ip'] = '127.0.0.1'
+normal.logstash['instance']['server']['graphite_query'] = ''
+
 # normal.logstash['instance']['server']['filters'] = [{}]
 normal.logstash['instance']['server']['outputs'][0]['elasticsearch_http']['host'] = 'elasticsearch-frontend-946485335.eu-west-1.elb.amazonaws.com'
 normal.logstash['instance']['server']['outputs'][0]['elasticsearch_http']['port'] = '9200'
