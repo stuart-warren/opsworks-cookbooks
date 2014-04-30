@@ -1,0 +1,27 @@
+input {
+  <% if node['logstash']['server']['inputs'].empty? -%>
+  tcp {
+    type => "tcp-input"
+    port => "5959"
+    codec => "json"
+  }
+  <% else -%>
+    <%= LogstashConf.section_to_str(node['logstash']['server']['inputs']) %>
+  <% end -%>
+}
+
+<% unless node['logstash']['server']['filters'].empty? -%>
+filter {
+  <%= LogstashConf.section_to_str(node['logstash']['server']['filters'], node['logstash']['server']['version'], @patterns_dir) %>
+}
+<% end -%>
+
+output {
+  <% if node['logstash']['server']['debug'] -%>
+  stdout { debug => true }
+  <% end -%>
+  <% if not @es_server_ip.empty? -%>
+  elasticsearch_http { host => "<%= @es_server_ip %>" cluster => "<%= @es_cluster %>" }
+  <% end -%>
+  <%= LogstashConf.section_to_str(node['logstash']['server']['outputs']) %>s
+}
