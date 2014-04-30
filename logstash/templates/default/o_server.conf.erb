@@ -1,10 +1,6 @@
 input {
   <% if node['logstash']['server']['inputs'].empty? -%>
-  tcp {
-    type => "tcp-input"
-    port => "5959"
-    codec => "json"
-  }
+    # node['logstash']['server']['inputs'] is empty
   <% else -%>
     <%= LogstashConf.section_to_str(node['logstash']['server']['inputs']) %>
   <% end -%>
@@ -30,5 +26,5 @@ output {
       codec => "<%= @es_codec %>"
   }
   <% end -%>
-  <%= LogstashConf.section_to_str(node['logstash']['server']['outputs']) %>s
+  <%= LogstashConf.section_to_str(node['logstash']['server']['outputs']) %>
 }

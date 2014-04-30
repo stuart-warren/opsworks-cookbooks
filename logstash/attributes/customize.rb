@@ -8,16 +8,12 @@ normal.logstash['server']['graphite_query'] = 'stack:graphite*'
 normal.logstash['server']['config_file'] = nil
 normal.logstash['server']['config_templates'] = ['o_server']
 
-normal.logstash['server']['output']['elasticsearch_http']['server_ip'] = 'elasticsearch-frontend-946485335.eu-west-1.elb.amazonaws.com'
-normal.logstash['server']['output']['elasticsearch_http']['port'] = '443'
-normal.logstash['server']['output']['elasticsearch_http']['template'] = "aws-logstash-%{+YYYY.MM.dd}"
-
 normal.logstash['server']['config_templates_variables'] = { o_server: { es_server_ip: 'localhost',
                                                                         es_port: 443,
                                                                         es_index_prd: "aws-logstash-%{+YYYY.MM.dd}",
                                                                         es_flush_size: 500,
                                                                         es_idle_flush: 1,
-                                                                        codec: 'json' } }
+                                                                        es_codec: 'json' } }
 # normal.logstash['server']['filters'] = [{}]
 # normal.logstash['server']['outputs'][0]['elasticsearch_http']['host'] = 'elasticsearch-frontend-946485335.eu-west-1.elb.amazonaws.com'
 # normal.logstash['server']['outputs'][0]['elasticsearch_http']['port'] = '9200'
