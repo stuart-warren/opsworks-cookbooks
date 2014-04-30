@@ -1,4 +1,6 @@
 
+
+normal['platform_version'] = '6.0'
 normal.logstash['install_zeromq'] = true
 normal.logstash['server']['enable_embedded_es'] = false
 
