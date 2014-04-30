@@ -21,7 +21,14 @@ output {
   stdout { debug => true }
   <% end -%>
   <% if not @es_server_ip.empty? -%>
-  elasticsearch_http { host => "<%= @es_server_ip %>" cluster => "<%= @es_cluster %>" }
+  elasticsearch_http {
+      host => "<%= @es_server_ip %>"
+      port => "<%= @es_port %>"
+      index => "<%= @es_index_prd %>"
+      flush_size => "<%= @es_flush_size %>"
+      idle_flush_time => "<%= @es_idle_flush %>"
+      codec => "<%= @es_codec %>"
+  }
   <% end -%>
   <%= LogstashConf.section_to_str(node['logstash']['server']['outputs']) %>s
 }
