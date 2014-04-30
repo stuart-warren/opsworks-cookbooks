@@ -7,11 +7,13 @@
 include_recipe 'yum::default'
 
 major_version = node['platform_version'].split('.').first.to_i
-# hardcoded for AmazonLinux...
-major_version = 6
 
 case
 when platform_family?('rhel')
+  if platform?('amazon')
+    # hardcoded for AmazonLinux who thinks it's major version is 2013...
+    major_version = 6
+  end
   yum_repository 'zeromq' do
     description 'zeromq repo'
     baseurl "http://download.opensuse.org/repositories/home:/fengshuo:/zeromq/CentOS_CentOS-#{major_version}/"

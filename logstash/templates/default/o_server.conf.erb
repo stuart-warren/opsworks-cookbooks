@@ -4,6 +4,17 @@ input {
   <% else -%>
     <%= LogstashConf.section_to_str(node['logstash']['server']['inputs']) %>
   <% end -%>
+  <% if node['logstash']['install_zeromq'] -%>
+    zeromq {
+      topology => "pushpull"
+      type => "zeromq-input"
+      # Clients will publish their logs to us
+      mode => "server"
+      address => ["tcp://*:<%= @zmq_port %>"]
+      codec => "json"
+      sockopt => [<%= @zmq_sockopts %>]
+    }
+  <% end -%>
 }
 
 <% unless node['logstash']['server']['filters'].empty? -%>
