@@ -1,0 +1,13 @@
+# kibana::default
+{
+    "kibana": {
+        "es_server": "elasticsearch-frontend-000000.eu-west-1.elb.amazonaws.com",
+        "es_port": "443",
+        "git": {
+            "branch": "v3.0.0milestone5"
+        },
+        "config": {
+            "elasticsearch": "http://elasticsearch-frontend-000000.eu-west-1.elb.amazonaws.com:443"
+        }
+    }
+}

@@ -1,53 +1,9 @@
 {
     "logstash": {
-        "install_zeromq": true,
         "server": {
-            "enable_embedded_es": false,
-            "inputs": [{
-                "zeromq": {
-                    "topology": "pushpull",
-                    "type": "zeromq-input",
-                    "mode": "server",
-                    "address": ["tcp://*:2120"],
-                    "codec": "json"
-                }
-            }],
-            "filters": {},
-            "outputs": [{
-                "elasticsearch_http": {
-                    "host": "elasticsearch-frontend-946485335.eu-west-1.elb.amazonaws.com",
-                    "port": "9200",
-                    "flush_size": 500,
-                    "idle_flush_time": 1,
-                    "replication": "sync",
-                    "workers": 3,
-                    "index": "aws-logstash-%{+YYYY.MM.dd}",
-                    "manage_template": false,
-                    "codec": "json"
-                }
-            }]
-        }
-    }
-}
-
-{
-    "logstash": {
-        "server": {
-            "enable_embedded_es": false,
-            "filters": {},
-            "outputs": [{
-                "elasticsearch_http": {
-                    "host": "elasticsearch-frontend-946485335.eu-west-1.elb.amazonaws.com",
-                    "port": "9200",
-                    "flush_size": 500,
-                    "idle_flush_time": 1,
-                    "replication": "sync",
-                    "workers": 3,
-                    "index": "aws-logstash-%{+YYYY.MM.dd}",
-                    "manage_templates": false,
-                    "codec": "json"
-                }
-            }]
+            "elasticsearch_ip": {
+                "es_server_ip": "elasticsearch-frontend-000000.eu-west-1.elb.amazonaws.com"
+            }
         }
     }
 }
