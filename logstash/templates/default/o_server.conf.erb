@@ -29,7 +29,7 @@ output {
   <% end -%>
   <% if not @es_server_ip.empty? -%>
   elasticsearch_http {
-      host => "<%= node['logstash']['server']['elasticsearch_ip'] %>"
+      host => "<%= @es_server_ip %>"
       port => "<%= @es_port %>"
       index => "<%= @es_index_prd %>"
       flush_size => "<%= @es_flush_size %>"

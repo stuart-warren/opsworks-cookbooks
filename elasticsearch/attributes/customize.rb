@@ -23,9 +23,13 @@ normal.elasticsearch['custom_config']['indices.cache.filter.size'] = '15%'
 normal.elasticsearch['custom_config']['action.disable_shutdown'] = true
 normal.elasticsearch['custom_config']['script.disable_dynamic'] = true
 
+## Custom attributes
+normal.elasticsearch['cluster']['datalayer'] = 'elasticsearch-data'
+normal.elasticsearch['cluster']['httplayer'] = 'elasticsearch-frontend'
+
 
 # For nodes within this layer
-if node[:opsworks][:instance][:layers].include? 'elasticsearch-frontend'
+if node[:opsworks][:instance][:layers].include? node['elasticsearch']['cluster']['httplayer'] #'elasticsearch-frontend'
 
     # httpnode
     normal.elasticsearch['node']['master'] = true
@@ -40,7 +44,7 @@ if node[:opsworks][:instance][:layers].include? 'elasticsearch-frontend'
 end
 
 # For nodes within this other layer
-if node[:opsworks][:instance][:layers].include? 'elasticsearch-data'
+if node[:opsworks][:instance][:layers].include? node['elasticsearch']['cluster']['datalayer'] #'elasticsearch-data'
 
     # datanode
     normal.elasticsearch['node']['master'] = false
