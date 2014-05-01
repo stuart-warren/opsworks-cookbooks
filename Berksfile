@@ -1,5 +1,6 @@
 cookbook 'apt'
 cookbook 'ark'
+cookbook 'aws'
 cookbook 'bluepill'
 cookbook 'build-essential'
 cookbook 'java'
