@@ -13,7 +13,7 @@ normal.elasticsearch['discovery']['type'] = 'ec2'
 # Should probably be cleverer and work out the number of masters?
 normal.elasticsearch['discovery']['zen']['minimum_master_nodes'] = 2
 normal.elasticsearch['discovery']['zen']['ping']['multicast']['enabled'] = false
-normal.elasticsearch['discovery']['ec2']['tag']['opsworks:stack'] = "elasticsearch-test"
+# normal.elasticsearch['discovery']['ec2']['tag']['opsworks:stack'] = "elasticsearch-test"
 normal.elasticsearch['limits']['nofile'] = 655350
 normal.elasticsearch['custom_config']['cluster.routing.allocation.awareness.attributes'] = 'aws_availability_zone'
 normal.elasticsearch['custom_config']['index.refresh_interval'] = '3s'
