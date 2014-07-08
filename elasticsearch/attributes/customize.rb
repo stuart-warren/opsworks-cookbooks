@@ -8,7 +8,7 @@ normal.elasticsearch['logging']['action.discovery.ec2'] = 'INFO'
 normal.elasticsearch['plugins']['elasticsearch/elasticsearch-cloud-aws']['version'] = '2.1.0'
 normal.elasticsearch['cloud']['aws']['region'] = 'eu-west-1'
 normal.elasticsearch['index']['number_of_shards'] = 3
-normal.elasticsearch['index']['number_of_replicas'] = 2
+normal.elasticsearch['index']['number_of_replicas'] = 1
 normal.elasticsearch['discovery']['type'] = 'ec2'
 # Should probably be cleverer and work out the number of masters?
 normal.elasticsearch['discovery']['zen']['minimum_master_nodes'] = 2
