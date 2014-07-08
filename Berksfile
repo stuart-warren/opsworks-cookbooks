@@ -16,7 +16,8 @@ cookbook 'chef_handler'
 # cookbook 'runit'
 
 
-cookbook 'nginx', git: 'https://github.com/miketheman/nginx.git', tag: 'v2.7.4'
+# cookbook 'nginx', git: 'https://github.com/miketheman/nginx.git', tag: 'v2.7.4'
+cookbook 'nginx', git: 'https://github.com/miketheman/nginx.git', tag: 'v2.6.2'
 cookbook 'ohai', git: 'https://github.com/opscode-cookbooks/ohai.git', tag: '1.1.4'
 # cookbook 'elasticsearch', git: 'https://github.com/elasticsearch/cookbook-elasticsearch'
 cookbook 'elasticsearch', git: 'https://github.com/stuart-warren/cookbook-elasticsearch', branch: 'customize_attributes'
