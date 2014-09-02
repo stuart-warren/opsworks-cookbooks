@@ -1,0 +1,10 @@
+# Input for syslog logs preformed in JSON - To lower requirements for parsing
+
+input {
+    udp {
+        type => "udp-json"
+        port => 1516
+        codec => "json_lines"
+        tags => ["json"]
+    }
+}
