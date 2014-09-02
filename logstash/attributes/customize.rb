@@ -7,7 +7,7 @@ normal.logstash['server']['enable_embedded_es'] = false
 # normal.logstash['server']['elasticsearch_ip'] = 'elasticsearch-frontend-000000.eu-west-1.elb.amazonaws.com'
 # normal.logstash['server']['elasticsearch_port'] = '9200'
 normal.logstash['server']['config_file'] = nil
-normal.logstash['server']['config_templates'] = ['o_server']
+normal.logstash['server']['config_templates'] = ['o_server','o_server_udp']
 
 # zmq_sockopts: '"ZMQ::RCVHWM",1000,"ZMQ::LINGER",10000, "ZMQ::RCVBUF", 87380',
 normal.logstash['server']['config_templates_variables'] = { o_server: { zmq_port: 2120,
