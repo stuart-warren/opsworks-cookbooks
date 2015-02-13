@@ -1,5 +1,7 @@
 source 'https://api.berkshelf.com'
 
+# grabbed current working versions from /var/lib/aws/opsworks/berkshelf_cache/cookbooks
+
 cookbook 'apt', '= 2.6.1'
 cookbook 'ark', '= 0.9.0'
 cookbook 'aws', '= 2.5.0'
