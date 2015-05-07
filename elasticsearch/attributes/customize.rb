@@ -36,6 +36,7 @@ if node[:opsworks][:instance][:layers].include? node['elasticsearch']['cluster']
     normal.elasticsearch['node']['data'] = false
     normal.elasticsearch['nginx']['allow_cluster_api'] = true
     normal.elasticsearch['nginx']['port'] = 80
+    normal.elasticsearch['custom_config']['http.cors.enabled'] = true
     normal.elasticsearch['plugins']['lukas-vlcek/bigdesk'] = {}
     normal.elasticsearch['plugins']['lmenezes/elasticsearch-kopf'] = {}
     normal.elasticsearch['plugins']['royrusso/elasticsearch-HQ'] = {}
